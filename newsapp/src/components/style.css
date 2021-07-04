@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+  }
+  
+  .first{
+    max-width: 500px;
+    border: 1px solid lightgray;
+    padding: 16px;
+   
+  }
+  .imgClass{
+    width:450px;
+    height: 55%;
+  }
+  .TitleClass{
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+  .descripClass{
+    padding-top: 6px;
+   
+  }
+  
+  .App{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:10px;
+   }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
