@@ -5,15 +5,16 @@ import "./tempstyle.css";
 
 const Tempapp = ()=>{
     const [city,setcity]=useState();
-    const [search,setsearch]=useState("Enter City");
+    const [search,setsearch]=useState("delhi");
 
     useEffect(()=>{
          const fetchApi= async()=>{
-             const url=`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=cbe0136f9161eb5d645e0f7f777a6c11`
-             const response =await axios.get(url);
-            //  const resjson=await response.json();
-             console.log(response.data.main);
-             setcity(response.data.main);
+             const url=`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=cbe0136f9161eb5d645e0f7f777a6c11`
+             const response =await fetch(url);
+             const resjson=await response.json();
+            console.log(resjson.main);
+             setcity(resjson.main);
+           // console.log(resjson);
          };
 
          fetchApi();
@@ -26,13 +27,16 @@ const Tempapp = ()=>{
                      setsearch(event.target.value);
               }} ></input>
           </div>
-
-          <div className="information">
+        {!city ? (
+             <p>No Data Found</p>
+        ) :(
+            <div className="information">
                 <h1>{search}</h1>
                 <h1>{city.temp}</h1> 
                 <h1>{city.temp_max}</h1> 
                 <h1>{city.temp_min}</h1> 
-          </div>
+          </div> 
+        )}
           </>
       )
 }
