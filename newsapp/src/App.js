@@ -14,7 +14,7 @@ export default function App(){
   return(
     <div>
          <ReturnOnlyLI />
-        <Newsapp />
+        <Newsapp /> 
        
     </div>
   );

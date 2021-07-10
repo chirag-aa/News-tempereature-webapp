@@ -21,7 +21,7 @@ const Tempapp = ()=>{
     } ,[search])
       return (
           <>
-          <h1> THE WALL NEWS</h1>
+          <h1> Temperature App</h1>
           <div className="temp">
               <input type="search" className="inpsearch" onChange={(event)=>{
                      setsearch(event.target.value);
@@ -31,10 +31,10 @@ const Tempapp = ()=>{
              <p>No Data Found</p>
         ) :(
             <div className="information">
-                <h1>{search}</h1>
-                <h1>{city.temp}</h1> 
-                <h1>{city.temp_max}</h1> 
-                <h1>{city.temp_min}</h1> 
+                <h1>City: {search}</h1>
+                <h1>Temp: {city.temp}</h1> 
+                <h1>Max Temp: {city.temp_max}</h1> 
+                <h1>Min Teamp: {city.temp_min}</h1> 
           </div> 
         )}
           </>
